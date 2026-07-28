@@ -1,64 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="he">
 <head>
-  <title>Crystal Chat ✨</title>
-  <style>
-    body {
-      background: linear-gradient(135deg, #25105c, #0b5fa5);
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .box {
-      width: 350px;
-      margin: 50px auto;
-      background: rgba(255,255,255,0.15);
-      padding: 25px;
-      border-radius: 25px;
-      box-shadow: 0 0 25px #8ee7ff;
-    }
+<title>Crystal Chat</title>
 
-    h1 {
-      color: #d9c8ff;
-      text-shadow: 0 0 15px #ffffff;
-    }
+<link rel="stylesheet" href="css/style.css">
 
-    input {
-      width: 90%;
-      padding: 12px;
-      border-radius: 15px;
-      border: none;
-      margin: 8px;
-    }
-
-    button {
-      background: #b67cff;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background: #8c4fff;
-    }
-  </style>
 </head>
 
 <body>
 
-<div class="box">
-  <h1>💎 Crystal Chat ✨</h1>
+<div class="container">
 
-  <p>ברוכים הבאים לצ'אט הקסום שלך!</p>
-
-  <input placeholder="השם שלך">
-  <br>
-  <button>כניסה</button>
+<div class="logo">
+💎 Crystal Chat
 </div>
 
+<div class="subtitle">
+היכנסי לעולם הקסום של הצ'אט
+</div>
+
+<input
+id="username"
+type="text"
+placeholder="שם משתמש">
+
+<button id="loginButton">
+כניסה
+</button>
+
+</div>
+
+<script src="js/firebase.js"></script>
+
+<script>
+
+document.getElementById("loginButton").onclick=function(){
+
+const username=document.getElementById("username").value;
+
+if(username===""){
+alert("צריך לבחור שם משתמש 😊");
+return;
+}
+
+localStorage.setItem("username",username);
+
+alert("ברוכה הבאה "+username+" 💎");
+
+};
+
+</script>
+
 </body>
+
 </html>
