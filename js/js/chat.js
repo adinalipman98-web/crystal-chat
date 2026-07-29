@@ -1,5 +1,6 @@
 import { db } from "./firebase.js";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 
 const sendButton = document.getElementById("sendButton");
 const messageInput = document.getElementById("messageInput");
@@ -23,7 +24,6 @@ sendButton.addEventListener("click", async () => {
     messageInput.value = "";
 
 });
-import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 
 const q = query(
     collection(db, "messages"),
